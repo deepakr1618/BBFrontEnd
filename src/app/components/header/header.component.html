@@ -1,0 +1,25 @@
+<div class="header-wrap">
+    <div class="header-cont">
+        <div class="header-left">
+            <div class="logo" routerLink="/">
+                BIGKART
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="cart-cont" [ngClass]="{'has-items' : cart.length>0}">
+                <div class="cart" >
+                    <div>
+                        <img src="assets/basket.png" width="18px">
+                        Basket
+                    </div>
+                </div>
+                <p *ngIf="cart.length!=0">{{cart.length}}</p>
+            </div>
+            <div class="profile" (click)="login()">
+                <img src="assets/account.png" width="18px">
+                <p *ngIf="!displayName">Log in</p>
+                <p *ngIf="displayName">{{displayName}}</p>
+            </div>
+        </div>
+    </div>
+</div>

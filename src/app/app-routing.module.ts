@@ -1,8 +1,29 @@
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { ViewTypeComponent } from './components/view-type/view-type.component';
+import { LandingComponent } from './components/landing/landing.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:"",
+    component:LandingComponent,
+    pathMatch:"full"
+  },
+  {
+    path:"type/:id",
+    component:ViewTypeComponent
+  },
+  {
+    path:"404",
+    component:PagenotfoundComponent
+  },
+  {
+    path:"**",
+    component:PagenotfoundComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

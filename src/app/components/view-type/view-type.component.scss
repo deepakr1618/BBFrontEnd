@@ -1,0 +1,17 @@
+.view-container{
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .title{
+        width:70%;
+    }
+    .items-container{
+        width:70%;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 45px;
+        
+    }
+}

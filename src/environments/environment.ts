@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl:"https://BBBackEnd--master1.repl.co/api",
+  firebase:{
+    apiKey: "AIzaSyBNHITSvWjaHfQ_N9E21htiHanMqusF_UI",
+    authDomain: "angularweb-73dfb.firebaseapp.com",
+    databaseURL: "https://angularweb-73dfb.firebaseio.com",
+    projectId: "angularweb-73dfb",
+    storageBucket: "angularweb-73dfb.appspot.com",
+    messagingSenderId: "118982292401",
+    appId: "1:118982292401:web:a7675a3e8ba6c33831c390",
+    measurementId: "G-D0Q3WFEK40"
+  }
 };
 
 /*
