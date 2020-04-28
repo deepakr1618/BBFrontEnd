@@ -15,7 +15,6 @@ export class NotificationService {
   
   notify(str = "Default Notification"){
     let newArr = this._notifications.value
-    console.log(newArr)
     let randomId:number = Math.random()*100
     newArr.push({
       id:randomId,

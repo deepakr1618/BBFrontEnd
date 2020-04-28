@@ -1,3 +1,5 @@
+import { NotificationService } from './../../services/notification.service';
+import { MongooseService } from './../../services/auth/mongoose/mongoose.service';
 import { FirebaseUser } from './../../models/firebaseUser';
 import { FirebaseAuthService } from './../../services/auth/firebase-auth.service';
 import { CartService } from './../../services/api/cart.service';
@@ -10,34 +12,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   cart: Array<any>=[]
-  user: any
+  fuserData: any
+  muserData: any
   displayName:string=""
   constructor(
     private _cartService: CartService,
-    private firebaseauth: FirebaseAuthService
+    private firebaseauth: FirebaseAuthService,
+    private muser: MongooseService,
+    private noti: NotificationService
   ) { }
 
   ngOnInit() {
 
     //Get Cart Service
     this._cartService.cart$.subscribe((data)=>{
+      console.log(data)
       this.cart = data
     })
 
     //Get User Service from firebase
     this.firebaseauth.user$.subscribe((data)=>{
       if(data){
-        this.user = data
-        this.displayName = data.displayName
+        this.fuserData = data
+      }else{
+        this.cart = []
       }
+    })
+
+    //Get mongoose data
+    this.muser.muser$.subscribe((data)=>{
+      this.muserData=data
+      this.displayName = data.name
     })
   }
 
   login(){
-    if(this.user){
+    //If a user already exists, sign out of firebase which will also update the mongoose user
+    console.log(this.muserData.name)
+    if(this.muserData.name){
       this.firebaseauth.signOut()
       .then(()=>{
-        this.displayName = "Log In"
+        this.noti.notify("Logged Out!")
       })
       .catch((e)=>{
         console.log(e)
@@ -45,7 +60,7 @@ export class HeaderComponent implements OnInit {
     }else{
       this.firebaseauth.signInWithGoogle()
       .then((res)=>{
-        console.log(res)
+        this.displayName = "Log In"
       })
     .catch(err=>console.log(err))
     }

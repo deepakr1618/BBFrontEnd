@@ -27,11 +27,11 @@ export class FirebaseAuthService {
     
     ) {
     this.user$ = _firebaseAuth.authState;
-    this.user$.subscribe((user)=>{
-      if(user){
-          this.ns.notify(`Welcome ${user.displayName} !`)
-      }
-    })
+    // this.user$.subscribe((user)=>{
+    //   if(user){
+    //       this.ns.notify(`Welcome ${user.displayName} !`)
+    //   }
+    // })
    }
 
   

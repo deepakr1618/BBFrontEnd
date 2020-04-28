@@ -22,9 +22,10 @@ body{
   }
   
 ::-webkit-scrollbar-thumb {
-    background: $theme-color-light;
+    background: $theme-color-dark;
+    transition: 0.2s all ease;
   }
   
 ::-webkit-scrollbar-thumb:hover {
-    background: $theme-color-dark;
+    background: $theme-color-light;
   }

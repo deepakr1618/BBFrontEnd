@@ -6,4 +6,5 @@ export interface ProductInf{
     type: string,
     seller: string,
     images: Array<any>
+    _id:string
 }

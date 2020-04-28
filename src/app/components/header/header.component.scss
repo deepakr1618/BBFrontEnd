@@ -2,13 +2,16 @@
 
 
 @mixin haveCartItems{
-    background:#333;
     width:120px;
     p{
+        height:100%;
         margin:0px;
-        padding:0px;
+        padding: 4px 5px;
         color:white;
-        margin-right: 7px;
+        background: rgb(255, 72, 72);
+        text-align: center;
+        margin-left: 4px;
+        border-radius: 5px;;
     }
 }
 
@@ -53,11 +56,10 @@
             flex-direction: row;
             .cart-cont{
                 width:100px;
-                border-radius: 99px;
+                border-radius: 7px;
                 display: flex;
                 align-items: center;
                 flex-direction: row;
-                justify-content: space-between;
                 transition: 0.6s all ease;
                 &.has-items{
                     @include haveCartItems;
@@ -70,7 +72,7 @@
                     align-items: center;
                     flex-direction: row;
                     justify-content: space-evenly;
-                    border-radius: 99px;
+                    border-radius: 7px;
                     user-select: none;
                     cursor: pointer;
                 }

@@ -1,3 +1,4 @@
+import { MongooseService } from './services/auth/mongoose/mongoose.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bigbasket';
+  constructor(
+    private mUser : MongooseService
+  ){
+
+  }
 }

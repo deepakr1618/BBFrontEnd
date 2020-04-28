@@ -1,3 +1,4 @@
+import { MongooseService } from './services/auth/mongoose/mongoose.service';
 import { FirebaseAuthService } from './services/auth/firebase-auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,6 +21,8 @@ import { ViewTypeComponent } from './components/view-type/view-type.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { ItemCardComponent } from './components/view-type/item-card/item-card.component';
 import { NotificationComponent } from './components/notification/notification.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CheckoutItemComponent } from './components/checkout/checkout-item/checkout-item.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { NotificationComponent } from './components/notification/notification.co
     ViewTypeComponent,
     PagenotfoundComponent,
     ItemCardComponent,
-    NotificationComponent
+    NotificationComponent,
+    CheckoutComponent,
+    CheckoutItemComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ import { NotificationComponent } from './components/notification/notification.co
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [FirebaseAuthService],
+  providers: [FirebaseAuthService,MongooseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

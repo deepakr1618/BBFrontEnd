@@ -1,3 +1,4 @@
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { ViewTypeComponent } from './components/view-type/view-type.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path:"type/:id",
     component:ViewTypeComponent
+  },
+  {
+    path:"checkout",
+    component:CheckoutComponent
   },
   {
     path:"404",

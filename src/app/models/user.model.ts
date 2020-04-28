@@ -1,4 +1,5 @@
 export interface UserInf{
+    _id:string,
     firebaseUID: string,
     name: string,
     cart?: Array<any>,
