@@ -48,7 +48,6 @@ export class HeaderComponent implements OnInit {
 
   login(){
     //If a user already exists, sign out of firebase which will also update the mongoose user
-    console.log(this.muserData.name)
     if(this.muserData.name){
       this.firebaseauth.signOut()
       .then(()=>{

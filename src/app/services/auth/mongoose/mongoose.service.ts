@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from 'firebase';
 import { stringify } from 'querystring';
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +23,16 @@ export class MongooseService {
         street: undefined,
         city: undefined,
         pincode: undefined
-    }
+    },
+    email:undefined
   })
   muser$: Observable<UserInf>
   fuser:any
   constructor(
     private http: HttpClient,
     private firebaseAuth : FirebaseAuthService,
-    private noti: NotificationService
+    private noti: NotificationService,
+    private router: Router
   ) {
     this.muser$ = this.muser_.asObservable()
     this.firebaseAuth.user$.subscribe((user)=>{
@@ -38,6 +41,7 @@ export class MongooseService {
         this.fuser = user
         this.updateMongooseUser()
       }else{
+        //Logged out
         this.muser_.next({
           _id:undefined,
           firebaseUID: undefined,
@@ -48,7 +52,8 @@ export class MongooseService {
               street: undefined,
               city: undefined,
               pincode: undefined
-          }
+          },
+          email:undefined
         })
       }
     })
@@ -61,6 +66,34 @@ export class MongooseService {
       if(user.status=="success"){
         this.noti.notify(`Welcome ${user.data.name}!`)
         this.muser_.next(user.data)
+      }else if(user.status=="NEW_USER"){
+        console.log("New user")
+        this.router.navigate(["/signup"])
+      }
+    })
+  }
+
+
+  mongooseCreateUser(name, dr,street, city, pincode){
+    let fuser = this.fuser;
+    this.http.post<UserInf>(`${environment.apiUrl}/user/`,{
+      name,
+      address: {
+        street,
+        city,
+        pincode,
+        houseNo: dr
+      },
+      firebaseUID: fuser.uid,
+      email: fuser.email
+    })
+    .subscribe((user:any)=>{
+      if(user.status=="success"){
+        this.noti.notify(`Welcome ${user.data.name}!`)
+        this.muser_.next(user.data)
+        this.router.navigate(["/"])
+      }else{
+        this.noti.warning("Failure!")
       }
     })
   }

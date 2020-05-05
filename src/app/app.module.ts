@@ -1,8 +1,9 @@
+import { GetDetailsComponent } from './components/checkout/get-details/get-details.component';
 import { MongooseService } from './services/auth/mongoose/mongoose.service';
 import { FirebaseAuthService } from './services/auth/firebase-auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -10,9 +11,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { CustomButtonComponent } from './components/custom-button/custom-button.component';
@@ -36,7 +39,9 @@ import { CheckoutItemComponent } from './components/checkout/checkout-item/check
     ItemCardComponent,
     NotificationComponent,
     CheckoutComponent,
-    CheckoutItemComponent
+    CheckoutItemComponent,
+    SignupComponent,
+    GetDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { CheckoutItemComponent } from './components/checkout/checkout-item/check
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule
   ],
   providers: [FirebaseAuthService,MongooseService],
   bootstrap: [AppComponent]

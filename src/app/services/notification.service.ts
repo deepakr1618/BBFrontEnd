@@ -29,4 +29,8 @@ export class NotificationService {
     })()
   }
 
+  warning(str="Something went wrong"){
+
+  }
+
 }

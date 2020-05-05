@@ -1,3 +1,4 @@
+import { SignupComponent } from './components/signup/signup.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { ViewTypeComponent } from './components/view-type/view-type.component';
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path:"404",
     component:PagenotfoundComponent
+  },
+  {
+    path:"signup",
+    component:SignupComponent
   },
   {
     path:"**",

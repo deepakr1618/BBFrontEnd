@@ -7,7 +7,7 @@
     border-radius: 5px;
     padding:15px;
     display:grid;
-    grid-template-columns: 0.3fr 1fr 0.3fr 0.2fr;
+    grid-template-columns: 0.3fr 1fr 0.3fr 0.2fr 0.2fr;
     justify-content: center;
     align-items: center;
     img{
@@ -21,6 +21,7 @@
         transition: 0.4s all ease;
         &:hover{
             background:rgb(185, 185, 185);
+            color:white;
         }
     }
     .delete{

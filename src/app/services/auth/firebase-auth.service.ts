@@ -6,7 +6,6 @@ import { auth } from "firebase/app"
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable, interval } from 'rxjs';
-import { WindowService } from '../window.service';
 
 
 @Injectable({
@@ -22,7 +21,6 @@ export class FirebaseAuthService {
 
   constructor(
     private _firebaseAuth: AngularFireAuth,
-    private win: WindowService,
     private ns: NotificationService
     
     ) {

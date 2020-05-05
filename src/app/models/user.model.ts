@@ -8,5 +8,6 @@ export interface UserInf{
         street: string,
         city: string,
         pincode: number
-    }
+    },
+    email:string
 }
