@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
 
     //Get Cart Service
     this._cartService.cart$.subscribe((data)=>{
-      console.log(data)
       this.cart = data
     })
 

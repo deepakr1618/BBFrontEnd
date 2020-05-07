@@ -1,3 +1,4 @@
+import { OrdersComponent } from './components/orders/orders.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
@@ -22,13 +23,18 @@ const routes: Routes = [
     component:CheckoutComponent
   },
   {
-    path:"404",
-    component:PagenotfoundComponent
-  },
-  {
     path:"signup",
     component:SignupComponent
   },
+  {
+    path:"orders",
+    component:OrdersComponent
+  },
+  {
+    path:"404",
+    component:PagenotfoundComponent
+  },
+  
   {
     path:"**",
     component:PagenotfoundComponent

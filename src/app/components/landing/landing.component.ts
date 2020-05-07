@@ -16,7 +16,7 @@ export class LandingComponent implements OnInit {
   }
 
   notify(){
-    this.ns.notify("Hello world")
+    this.ns.notify("Nothing to know more!")
   }
 
 }

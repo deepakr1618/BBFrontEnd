@@ -91,6 +91,7 @@ export class CartService {
   }
 
   modifyCart(cartId, quantity){
+    // For editing existing items in the cart
     if(!this.mUserData._id)
       return
     const payload = {cartId, quantity}
@@ -107,6 +108,7 @@ export class CartService {
   }
 
   updateUserCart(){
+    // Once the cart is modified, or an item is added, update the cart Service.
     console.log("Cart updated!")
     let fuser = this.fuser;
     this.http.get<UserInf>(`${environment.apiUrl}/user/firebase/${fuser.uid}`)

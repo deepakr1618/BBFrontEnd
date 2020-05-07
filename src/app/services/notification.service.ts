@@ -30,7 +30,19 @@ export class NotificationService {
   }
 
   warning(str="Something went wrong"){
-
+    let newArr = this._notifications.value
+    let randomId:number = Math.random()*100
+    newArr.push({
+      id:randomId,
+      text:str
+    })
+    this._notifications.next(newArr);
+    (()=>{
+      setTimeout(()=>{
+        let newArr = this._notifications.value.filter((s)=>s.id!=randomId)
+        this._notifications.next(newArr);
+      },3000)
+    })()
   }
 
 }

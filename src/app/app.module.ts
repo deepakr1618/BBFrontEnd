@@ -1,3 +1,4 @@
+import { OrdersComponent } from './components/orders/orders.component';
 import { GetDetailsComponent } from './components/checkout/get-details/get-details.component';
 import { MongooseService } from './services/auth/mongoose/mongoose.service';
 import { FirebaseAuthService } from './services/auth/firebase-auth.service';
@@ -26,6 +27,7 @@ import { ItemCardComponent } from './components/view-type/item-card/item-card.co
 import { NotificationComponent } from './components/notification/notification.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CheckoutItemComponent } from './components/checkout/checkout-item/checkout-item.component';
+import { OrderCardComponent } from './components/orders/order-card/order-card.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { CheckoutItemComponent } from './components/checkout/checkout-item/check
     CheckoutComponent,
     CheckoutItemComponent,
     SignupComponent,
-    GetDetailsComponent
+    GetDetailsComponent,
+    OrdersComponent,
+    OrderCardComponent
   ],
   imports: [
     BrowserModule,

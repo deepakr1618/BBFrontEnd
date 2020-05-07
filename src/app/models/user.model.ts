@@ -9,5 +9,6 @@ export interface UserInf{
         city: string,
         pincode: number
     },
-    email:string
+    email:string,
+    orders?: Array<any>
 }
