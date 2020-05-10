@@ -1,3 +1,4 @@
+import { SellerComponent } from './components/seller/seller.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path:"orders",
     component:OrdersComponent
+  },
+  {
+    path:"seller",
+    component:SellerComponent
   },
   {
     path:"404",

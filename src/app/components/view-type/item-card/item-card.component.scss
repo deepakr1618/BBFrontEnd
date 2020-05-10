@@ -3,13 +3,18 @@
 .item{
     display:flex;
     position: relative;
-    height:100%;
     align-items: center;
     flex-direction: column;
     border-radius: 7px;
     width:200px;
     box-shadow:2px 2px 12px 7px rgba(0, 0, 0, 0.075);
     overflow:hidden;
+    padding: 5px;
+    border: 2px solid transparent;
+    transition: 0.4s all ease;
+    &:hover{
+        border: 2px solid $theme-color-dark;
+    }
     img{
         width:70%;
         margin-top:5px;
@@ -21,45 +26,35 @@
         width:100%;
         padding:5px;
     }
-    .empty{
-        height:25px;
-        width:100%;
-    }
     .bottom-buttons{
-        position: absolute;
-        bottom:0px;
-        height:25px;
         width:100%;
-        display:flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction:row;
+        display: grid;
+        grid-template-columns: 0.4fr 1fr;
+        justify-items: center;
         cursor: pointer;
         font-size: 12px;
         .add-to-cart{
-            width:70%;
-            height:100%;
+            width: 100%;
             color: #333;
             display:flex;
             align-items: center;
             justify-content: space-evenly;
-            flex-direction:row;
             transition:0.4s all ease;
-            background:$theme-color-light;
+            border-radius: 7px;
+            box-shadow: inset 0px 0px 7px rgba(0,0,0,0.15);
             &:hover{
                 background: $theme-color-dark;
                 color:white;
-                width:100%;
             }
             img{
                 width:15px;
             }
         }
         .view-more{
-            width:30%;
-            height:100%;
             display:flex;
             justify-content: space-evenly;
+            color: $theme-color-dark;
+            font-weight: bold;
             align-items: center;
             p{
                 font-size: 12px;

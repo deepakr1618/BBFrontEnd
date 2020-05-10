@@ -14,6 +14,8 @@ export class OrderCardComponent implements OnInit {
   total: number = 0
   orderItems = []
   status = "Loading..."
+  loading = true
+  completed = false
   constructor(
     private orderService : OrdersService,
     private noti : NotificationService,
@@ -34,6 +36,7 @@ export class OrderCardComponent implements OnInit {
       console.log(data.cart)
       this.products = data.productInfo
       this.status = data.orderStatus
+      this.completed = data.orderStatus == "Completed" ? true : false
       this.total = data.total
       this.orderItems = []
       data.cart.map((cartItem: any)=>{
@@ -45,6 +48,7 @@ export class OrderCardComponent implements OnInit {
         }
         this.orderItems.push(orderDS)
       })
+      this.loading = false
     })
   }
   

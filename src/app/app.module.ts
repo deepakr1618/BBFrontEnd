@@ -1,3 +1,6 @@
+import { NotSupportedComponent } from './components/not-supported/not-supported.component';
+import { ItemViewComponent } from './components/seller/item-view/item-view.component';
+import { SellerComponent } from './components/seller/seller.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { GetDetailsComponent } from './components/checkout/get-details/get-details.component';
 import { MongooseService } from './services/auth/mongoose/mongoose.service';
@@ -45,7 +48,10 @@ import { OrderCardComponent } from './components/orders/order-card/order-card.co
     SignupComponent,
     GetDetailsComponent,
     OrdersComponent,
-    OrderCardComponent
+    OrderCardComponent,
+    SellerComponent,
+    ItemViewComponent,
+    NotSupportedComponent
   ],
   imports: [
     BrowserModule,

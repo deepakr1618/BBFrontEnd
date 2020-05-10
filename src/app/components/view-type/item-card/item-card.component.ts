@@ -11,16 +11,17 @@ export class ItemCardComponent implements OnInit {
   @Input('title') itemTitle:string;
   @Input('url') imageURL:string;
   @Input('price') price:number;
-  @Input('product') product: ProductInf 
+  @Input('product') product: ProductInf
+  loading: boolean = false
   constructor(
-    private _cartService: CartService
+    private cartService: CartService
   ) { }
 
   ngOnInit() {
   }
 
   addToCart(){
-    this._cartService.addToCart(this.product)
+    this.cartService.addToCart(this.product)
   }
 
 }

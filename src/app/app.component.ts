@@ -1,3 +1,4 @@
+import { WindowService } from './services/window.service';
 import { MongooseService } from './services/auth/mongoose/mongoose.service';
 import { Component } from '@angular/core';
 
@@ -8,9 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bigbasket';
+  smallScreen = false
   constructor(
-    private mUser : MongooseService
+    private mUser : MongooseService,
+    private windowService: WindowService
   ){
-
+    
+  }
+  ngOnInit(){
+    const width= this.windowService.windowRef.innerWidth;
+    if(width<1000){
+      this.smallScreen = true
+    }
   }
 }
