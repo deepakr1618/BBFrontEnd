@@ -1,5 +1,5 @@
 import { NotificationService } from './../notification.service';
-import { environment } from './../../../environments/environment.prod';
+import { environment } from './../../../environments/environment';
 import { OrderInf } from './../../models/order.model';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { MongooseService } from './../auth/mongoose/mongoose.service';
