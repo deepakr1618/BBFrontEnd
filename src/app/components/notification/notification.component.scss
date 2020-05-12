@@ -16,11 +16,14 @@
         margin:10px 0px;
         background: $theme-color-dark;
         border-radius: 3px;
-        animation: fadeInOut 3s ease infinite;
+        animation: fadeInOut 4s ease infinite;
         color:white;
         font-size: 12px;
         p{
             padding:0px;
+        }
+        &.warning{
+            background:rgb(255, 95, 95);
         }
     }
 }

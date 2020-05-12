@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FirebaseAuthService } from './../auth/firebase-auth.service';
 import { UserInf } from './../../models/user.model';
 import { HttpClient } from '@angular/common/http';
@@ -22,7 +23,8 @@ export class CartService {
     private noti: NotificationService,
     private mUser: MongooseService,
     private http: HttpClient,
-    private fuserS: FirebaseAuthService
+    private fuserS: FirebaseAuthService,
+    private router: Router
   ) {
     this._cart = new BehaviorSubject([])
     this.cart$ = this._cart.asObservable()
@@ -48,6 +50,11 @@ export class CartService {
 
   
   addToCart(product: ProductInf, quantity: number = 1){
+    if(!this.mUserData || !this.mUserData.email){
+      this.noti.warning("Please login")
+      this.router.navigate(['/'])
+      return
+    }
     this.http.post(`${environment.apiUrl}/cart/addToCart`,{
       "mUserId":this.mUserData._id,
       "payload":{

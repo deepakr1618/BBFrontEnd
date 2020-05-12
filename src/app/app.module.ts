@@ -1,3 +1,4 @@
+import { CreditsComponent } from './components/credits/credits.component';
 import { NotSupportedComponent } from './components/not-supported/not-supported.component';
 import { ItemViewComponent } from './components/seller/item-view/item-view.component';
 import { SellerComponent } from './components/seller/seller.component';
@@ -51,7 +52,8 @@ import { OrderCardComponent } from './components/orders/order-card/order-card.co
     OrderCardComponent,
     SellerComponent,
     ItemViewComponent,
-    NotSupportedComponent
+    NotSupportedComponent,
+    CreditsComponent
   ],
   imports: [
     BrowserModule,

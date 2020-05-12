@@ -7,11 +7,12 @@
     flex-direction: column;
     border-radius: 7px;
     width:200px;
-    box-shadow:2px 2px 12px 7px rgba(0, 0, 0, 0.075);
     overflow:hidden;
     padding: 5px;
     border: 2px solid transparent;
+    background: white;
     transition: 0.4s all ease;
+    box-shadow: 2px 2px 7px 5px rgba(0, 0, 0, 0.082) ;
     &:hover{
         border: 2px solid $theme-color-dark;
     }
@@ -62,3 +63,4 @@
         }
     }
 }
+

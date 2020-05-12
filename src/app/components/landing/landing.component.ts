@@ -17,8 +17,8 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
   }
 
-  notify(){
-    this.ns.notify("Nothing to know more!")
+  credits(){
+    this.router.navigate(["/subject"])
   }
 
 

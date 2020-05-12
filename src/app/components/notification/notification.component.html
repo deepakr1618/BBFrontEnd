@@ -1,5 +1,7 @@
 <div class="notification-cont">
-    <div *ngFor="let noti of notifications$ | async" class="noti">
-        <p class="text">{{noti.text}}</p>
-    </div>
+    <ng-container *ngFor="let noti of notifications$ | async">
+        <div class="noti" [ngClass]="{'warning' : noti.type=='WARNING'}">
+            <p class="text">{{noti.text}}</p>
+        </div>
+    </ng-container>
 </div>

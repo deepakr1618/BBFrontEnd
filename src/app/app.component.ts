@@ -18,7 +18,7 @@ export class AppComponent {
   }
   ngOnInit(){
     const width= this.windowService.windowRef.innerWidth;
-    if(width<1000){
+    if(width<700){
       this.smallScreen = true
     }
   }

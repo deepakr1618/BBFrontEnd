@@ -1,0 +1,54 @@
+@import "../../colors.scss";
+
+.credits-cont{
+    width:100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .title{
+        width:70%;
+    }
+    .profile-cont{
+        width:70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        row-gap: 25px;
+        animation: 2s card-anim;
+        .profile{
+            display: flex;
+            padding: 7px;
+            border-radius: 7px;
+            background:rgb(233, 233, 233);
+            justify-content: center;
+            align-items: center;
+            img{
+                height:50px;
+                margin: 0px 10px;
+            }
+            .details{
+                padding:5px;
+                h4{
+                    margin: 5px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+@keyframes card-anim{
+    0%{
+        opacity: 0;
+        transform-origin: center;
+        transform: scale(0.8);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

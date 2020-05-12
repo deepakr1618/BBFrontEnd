@@ -19,12 +19,12 @@
                 <img src="assets/orders.png" width="18px">
                 <p>Orders</p>
             </div>
-            <div class="profile">
+            <div class="profile"  (click)="login()">
                 <img src="assets/account.png" width="18px">
-                <p *ngIf="!displayName"  (click)="login()">Log in</p>
+                <p *ngIf="!displayName" >Log in</p>
                 <p class="name">{{displayName}}</p>
             </div>
-            <div *ngIf="displayName" class="logout" (click)="login()">
+            <div *ngIf="displayName" class="logout" (click)="logout()">
                 <img src="assets/signout.png" width="16px">
                 <p>Log Out</p>
             </div>

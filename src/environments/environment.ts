@@ -4,6 +4,7 @@
 
 export const environment = {
   production: true,
+  // apiUrl:"https://BBBackEnd--master1.repl.co/api",
   apiUrl:"/api",
   firebase:{
     apiKey: "AIzaSyBNHITSvWjaHfQ_N9E21htiHanMqusF_UI",

@@ -18,7 +18,8 @@ export class NotificationService {
     let randomId:number = Math.random()*100
     newArr.push({
       id:randomId,
-      text:str
+      text:str,
+      type:"NORMAL"
     })
     this._notifications.next(newArr);
     (()=>{
@@ -34,14 +35,15 @@ export class NotificationService {
     let randomId:number = Math.random()*100
     newArr.push({
       id:randomId,
-      text:str
+      text:str,
+      type:"WARNING"
     })
     this._notifications.next(newArr);
     (()=>{
       setTimeout(()=>{
         let newArr = this._notifications.value.filter((s)=>s.id!=randomId)
         this._notifications.next(newArr);
-      },3000)
+      },4000)
     })()
   }
 

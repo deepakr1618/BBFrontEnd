@@ -48,13 +48,7 @@ export class HeaderComponent implements OnInit {
   login(){
     //If a user already exists, sign out of firebase which will also update the mongoose user
     if(this.muserData.name){
-      this.firebaseauth.signOut()
-      .then(()=>{
-        this.noti.notify("Logged Out!")
-      })
-      .catch((e)=>{
-        console.log(e)
-      })
+      this.noti.warning("Please logout to change account.")
     }else{
       this.firebaseauth.signInWithGoogle()
       .then((res)=>{
@@ -64,5 +58,16 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  logout(){
+    if(this.muserData.name){
+      this.firebaseauth.signOut()
+        .then(()=>{
+          this.noti.notify("Logged Out!")
+        })
+        .catch((e)=>{
+          console.log(e)
+        })
+    }
+  }
 
 }
