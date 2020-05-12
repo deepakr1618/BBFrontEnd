@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiUrl:"https://BBBackEnd--master1.repl.co/api",
+  production: true,
+  apiUrl:"/api",
   firebase:{
     apiKey: "AIzaSyBNHITSvWjaHfQ_N9E21htiHanMqusF_UI",
     authDomain: "angularweb-73dfb.firebaseapp.com",
